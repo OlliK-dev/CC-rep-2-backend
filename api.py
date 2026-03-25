@@ -1,8 +1,11 @@
 import pickle
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+MODEL_PATH = Path(__file__).resolve().with_name("sentiment_model_v1.0_pkl")
 
 app = FastAPI()
 
@@ -14,7 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-with open("sentiment_model_v1.0_pkl", "rb") as file:
+with MODEL_PATH.open("rb") as file:
     sentiment_model = pickle.load(file)
 
 
