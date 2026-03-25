@@ -1,4 +1,7 @@
-from waitress import serve
-import api
+from fastapi import FastAPI
 
-serve(api.app, host='0.0.0.0', port=8080)
+app = FastAPI()
+
+@app.get("/")
+async def root():
+    return {"message": "Hello333"}
