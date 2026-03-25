@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-MODEL_PATH = Path(__file__).resolve().with_name("sentiment_model_v1.0_pkl")
+MODEL_PATH = Path(__file__).resolve().parent / "sentiment_model_v1.0_pkl"
 
 app = FastAPI()
 
