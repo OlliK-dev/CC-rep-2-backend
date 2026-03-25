@@ -1,3 +1,4 @@
 FastAPI[standard]
 uvicorn
 waitress==3.0.2
+scikit-learn==1.6.1
